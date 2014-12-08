@@ -14,13 +14,13 @@
     </js-module>
 
     <js-module src="www/Camera.js" name="camera">
-        <clobbers target="navigator.camera" />
+        <clobbers target="navigator.ForegroundCamera" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Camera">
+            <feature name="ForegroundCamera">
                 <param name="android-package" value="com.wezka.nativecamera.NativeCameraLauncher"/>
             </feature>
         </config-file>
@@ -32,10 +32,10 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity 
-                android:label="nativecameraplugin" 
-                android:name="com.wezka.nativecamera.CameraActivity" 
-                android:screenOrientation="portrait" 
+            <activity
+                android:label="nativecameraplugin"
+                android:name="com.wezka.nativecamera.CameraActivity"
+                android:screenOrientation="portrait"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             </activity>
         </config-file>
@@ -54,7 +54,7 @@
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
         </js-module>
-      
+
      </platform>
-          
+
 </plugin>
