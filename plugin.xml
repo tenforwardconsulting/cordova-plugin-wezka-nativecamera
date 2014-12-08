@@ -5,20 +5,20 @@
       version="0.1.2">
     <name>Wezka Native Camera</name>
 
-    <js-module src="www/CameraConstants.js" name="Camera">
-        <clobbers target="Camera" />
-    </js-module>
-
-    <js-module src="www/CameraPopoverOptions.js" name="CameraPopoverOptions">
-        <clobbers target="CameraPopoverOptions" />
-    </js-module>
-
-    <js-module src="www/Camera.js" name="camera">
-        <clobbers target="navigator.ForegroundCamera" />
-    </js-module>
-
     <!-- android -->
     <platform name="android">
+        <js-module src="www/CameraConstants.js" name="Camera">
+            <clobbers target="Camera" />
+        </js-module>
+
+        <js-module src="www/CameraPopoverOptions.js" name="CameraPopoverOptions">
+            <clobbers target="CameraPopoverOptions" />
+        </js-module>
+
+        <js-module src="www/Camera.js" name="foregroundCamera">
+            <clobbers target="navigator.foregroundCamera" />
+        </js-module>
+
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="ForegroundCamera">
                 <param name="android-package" value="com.wezka.nativecamera.NativeCameraLauncher"/>
